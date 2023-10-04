@@ -66,5 +66,7 @@ jobs:
     needs: docker
 
     steps:
-    - name: Fake Deployment
-      run: echo "ghcr.io/umm-a/cicd-assignment" mock mock, pretend pretend
+    - name: Fake Deploy - Display Docker image name
+      run: "echo Docker image would be: $IMAGE"
+      env:
+        IMAGE: ${{ github.repository }}:${{ github.head_ref }}"
