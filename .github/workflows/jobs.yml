@@ -57,9 +57,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.MARIAS_SECRET }}
       - name: Build image
-        run: docker build -t ghcr.io/umm-a/cicd-assignment:${{ github.head_ref }} -f Dockerfile .
+        run: docker build -t ghcr.io/umm-a/cicd-assignment:${{ github.head_ref }}" -f Dockerfile .
       - name: Push image
-        run: docker push ghcr.io/umm-a/cicd-assignment:${{ github.head_ref }}
+        run: docker push ghcr.io/umm-a/cicd-assignment:${{ github.head_ref }}"
 
   fake-deployment: 
     runs-on: ubuntu-latest
