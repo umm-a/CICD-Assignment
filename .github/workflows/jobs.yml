@@ -66,7 +66,9 @@ jobs:
     needs: docker
 
     steps:
-    - name: Fake Deploy - Display Docker image name
-      run: "echo Docker image would be: $IMAGE"
-      env:
-        IMAGE: ${{ github.repository }}:${{ github.head_ref }}"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fake Deploy - Display Docker image name
+        run: "echo Docker image would be: $IMAGE"
+        env:
+         IMAGE: ${{ github.repository }}:${{ github.head_ref }}"
