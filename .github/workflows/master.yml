@@ -65,7 +65,7 @@ jobs:
       - name: Build image
         run: docker build -t ghcr.io/umm-a/cicd-assignment -f Dockerfile .
       - name: Push image
-        run: docker push ghcr.io/umm-a/cicd-assignment ghcr.io/umm-a/cicd-assignment:latest
+        run: docker push ghcr.io/umm-a/cicd-assignment
 
   fake-deployment:
     runs-on: ubuntu-latest
