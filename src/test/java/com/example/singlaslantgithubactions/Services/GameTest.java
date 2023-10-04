@@ -29,67 +29,67 @@ class GameTest {
     @Test
     void userWinsWithHeads() {
         RoundResult roundResult = mockGame.playGame("heads", 0.6);
-        assertEquals(roundResult.getWinner(), "User");
+        assertEquals(roundResult.getWinner(), "red");
     }
 
     @Test
     void userWinsWithTails() {
         RoundResult roundResult = game.playGame("tails", 0.3);
-        assertEquals(roundResult.getWinner(), "User");
+        assertEquals(roundResult.getWinner(), "red");
     }
 
     @Test
     void userLosesWithHeads() {
         RoundResult roundResult = game.playGame("heads", 0.3);
-        assertEquals(roundResult.getWinner(), "Computer");
+        assertEquals(roundResult.getWinner(), "red");
     }
 
     @Test
     void userLosesWithTails() {
         RoundResult roundResult = game.playGame("tails", 0.6);
-        assertEquals(roundResult.getWinner(), "Computer");
+        assertEquals(roundResult.getWinner(), "red");
     }
 
     @Test
     void flipCoinShouldReturnHeads() {
         String result = game.flipCoin(0.6);
-        assertEquals(result, "heads");
+        assertEquals(result, "red");
     }
 
     @Test
     void flipCoinShouldReturnTails() {
         String result = game.flipCoin(0.3);
-        assertEquals(result, "tails");
+        assertEquals(result, "red");
     }
 
     @Test
     void choosingHeadMeansComputerGetsTails() {
         String computerChoice = game.calculateComputerChoice("heads");
-        assertEquals(computerChoice, "tails");
+        assertEquals(computerChoice, "red");
     }
 
     @Test
     void choosingTailsMeansComputerGetsHeads() {
         String computerChoice = game.calculateComputerChoice("tails");
-        assertEquals(computerChoice, "heads");
+        assertEquals(computerChoice, "red");
     }
 
     @Test
     void whenChoiceAndResultIsHeadsUserWins() {
         String winner = game.calculateWinner("heads", "heads");
-        assertEquals(winner, "User");
+        assertEquals(winner, "red");
     }
 
     @Test
     void whenChoiceAndResultIsTailsUserWins() {
         String winner = game.calculateWinner("tails", "tails");
-        assertEquals(winner, "User");
+        assertEquals(winner, "red");
     }
 
     @Test
     void whenChoiceEqualsHeadsAndResultEqualsTailsComputerWins() {
         String winner = game.calculateWinner("heads", "tails");
-        assertEquals(winner, "Computer");
+        assertEquals(winner, "red");
     }
 
     @Test
