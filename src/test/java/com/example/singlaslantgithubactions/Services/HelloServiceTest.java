@@ -15,10 +15,10 @@ public class HelloServiceTest {
     private HelloService helloService;
     @BeforeEach
     void setHelloService(){
-        HelloService helloService = new HelloService();
+        helloService = new HelloService();
     }
     @Test
     void returnHelloReturnsHello(){
-        assertEquals(helloService.returnHello(), "GOODBYE!!!");
+        assertEquals(helloService.returnHello(), "HELLO!!!");
     }
 }
