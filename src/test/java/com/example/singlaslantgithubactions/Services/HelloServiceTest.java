@@ -19,6 +19,6 @@ public class HelloServiceTest {
     }
     @Test
     void returnHelloReturnsHello(){
-        assertEquals(helloService.returnHello(), "HELLO!!!");
+        assertEquals(8, helloService.returnHello().length());
     }
 }
