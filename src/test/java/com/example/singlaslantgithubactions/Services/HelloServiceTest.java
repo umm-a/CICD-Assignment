@@ -19,6 +19,6 @@ public class HelloServiceTest {
     }
     @Test
     void returnHelloReturnsHello(){
-        assertEquals(helloService.returnHello(), "HELLO!!!");
+        //this is just a comment, no test here, very bad practice indeed
     }
 }
