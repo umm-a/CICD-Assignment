@@ -1,7 +1,4 @@
-on: 
-  push: 
-    branches:
-      - Development
+on: [push, pull_request]
 
 jobs: 
   unit-tests:
@@ -59,11 +56,11 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.SUPER_SECRET }}
+          password: ${{ secrets.MARIAS_SECRET }}
       - name: Build image
-        run: docker build -t ghcr.io/umm-a/singlaslant-github-actions:Development -f Dockerfile .
+        run: docker build -t ghcr.io/umm-a/cicd-assignment -f Dockerfile .
       - name: Push image
-        run: docker push ghcr.io/umm-a/singlaslant-github-actions:Development
+        run: docker push ghcr.io/umm-a/cicd-assignment
 
   fake-deployment: 
     runs-on: ubuntu-latest
@@ -71,4 +68,4 @@ jobs:
 
     steps:
     - name: Fake Deployment
-      run: echo "ghcr.io/umm-a/singlaslant-github-actions:Development"
+      run: echo "ghcr.io/umm-a/cicd-assignment" mock mock, pretend pretend
